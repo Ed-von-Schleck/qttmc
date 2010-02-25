@@ -7,8 +7,8 @@ let COUNT=0
 for dir in $(find ./ -type d);
 do
     if [ -d $dir ]; then
-        if [ -e $dir/*.ly~ ]; then
-            for backupfile in $(ls $dir/*.ly~);
+        if [ -e $dir/*~ ]; then
+            for backupfile in $(ls $dir/*~);
             do
                 rm $backupfile
                 echo "deleted $backupfile"
@@ -17,5 +17,6 @@ do
         fi
     fi
 done
+
 echo "$COUNT files deleted"
 
