@@ -7,7 +7,8 @@ let COUNT=0
 for dir in $(find ./ -type d);
 do
     if [ -d $dir ]; then
-        if [ -e $dir/*~ ]; then
+        FILES=$dir/*~
+        if [ $FILES != "$dir/*~" ]; then
             for backupfile in $(ls $dir/*~);
             do
                 rm $backupfile
